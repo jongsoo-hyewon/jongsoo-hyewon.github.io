@@ -1,0 +1,4 @@
+/* theme 값을 content/invitation.js에서 바꿔 전체 색감을 전환합니다. */
+.theme-editorial { --paper: #f7f2ea; --ink: #382f2a; --muted: #756963; --line: #d8cec2; --accent: #a77c62; --warm: #e8ded1; }
+.theme-classic { --paper: #fbfbf8; --ink: #2f3c49; --muted: #6c7782; --line: #dbe2e6; --accent: #718da2; --warm: #edf3f5; }
+.theme-noir { --paper: #22201f; --ink: #eee7db; --muted: #c8beb1; --line: #514a44; --accent: #d0aa83; --warm: #302b28; }

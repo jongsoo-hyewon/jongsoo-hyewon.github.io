@@ -45,12 +45,31 @@ h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
 .transport { padding-bottom: 52px; text-align: left; }
 .transport .section-heading { text-align: center; margin-bottom: 28px; }
 .transport-item { padding: 18px 0; border-top: 1px solid var(--line); }
-.transport-item b { font: 500 15px 'Noto Serif KR', serif; }
+.transport-item:last-of-type { border-bottom: 1px solid var(--line); }
+.transport-item h3 { margin: 0 0 12px; color: var(--muted); font: 500 14px Pretendard, Arial, sans-serif; }
+.transport-item h3 span { display: inline-block; width: 22px; color: var(--muted); font-size: 17px; }
 .transport-item p, .transport-note { margin: 9px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.transport-item p { white-space: pre-line; }
+.transport-shuttle { margin-top: 16px !important; padding-top: 14px; border-top: 1px solid var(--line); }
+.transport-shuttle b { color: var(--ink); font-weight: 500; }
 .transport-note { padding: 15px 16px; background: var(--warm); text-align: center; }
 .accounts { background: var(--warm); }
+.accounts .section-heading > p { margin: 13px 0 25px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.account-groups { display: grid; gap: 10px; text-align: left; }
+.account-group { overflow: hidden; border-radius: 8px; background: var(--paper); }
+.account-group-toggle { width: 100%; display: flex; justify-content: space-between; padding: 17px 16px; border: 0; border-bottom: 1px solid var(--line); background: var(--paper); color: var(--ink); font: 500 14px Pretendard, Arial, sans-serif; text-align: left; cursor: pointer; }
+.account-group-toggle span { color: var(--muted); font-size: 17px; }
+.account-items { display: grid; gap: 10px; padding: 10px; background: var(--warm); }
+.account-items article { padding: 17px; border-radius: 10px; background: var(--paper); box-shadow: 0 5px 12px rgba(30, 43, 54, .07); }
+.account-person { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+.account-person span { color: var(--muted); }
+.account-person strong { font-weight: 500; }
+.account-number { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 15px; padding: 11px 12px; border: 0; border-radius: 8px; background: var(--warm); color: var(--muted); text-align: left; font: 400 11px/1.55 Pretendard, Arial, sans-serif; cursor: pointer; }
+.account-number b { color: var(--ink); font-weight: 400; }
+.account-number > span:last-child { color: var(--ink); white-space: nowrap; }
 .accounts p { margin: 17px 0 0; font-size: 13px; color: var(--muted); }
 .accounts b { color: var(--ink); font-weight: 500; margin-right: 10px; }
+.account-bank { margin-right: 7px; color: var(--muted); }
 .accounts p button { border: 0; padding: 0; background: transparent; color: var(--muted); font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .copy-status { margin-top: 18px; color: var(--accent); font-size: 12px; }
 footer { padding: 45px 20px; text-align: center; color: var(--accent); font: italic 18px/1.5 'Noto Serif KR', serif; }
@@ -60,4 +79,28 @@ footer { padding: 45px 20px; text-align: center; color: var(--accent); font: ita
 .share { border-top: 1px solid var(--line); }
 .share > button { margin-top: 25px; border: 1px solid var(--ink); padding: 13px 28px; background: var(--ink); color: var(--paper); font: 500 13px Pretendard, Arial, sans-serif; cursor: pointer; }
 .share > p { margin: 13px 0 0; color: var(--muted); font-size: 12px; }
+.contacts { border-top: 1px solid var(--line); }
+.parents-summary { display: grid; gap: 24px; margin: 28px 0 30px; text-align: left; }
+.parents-summary > div { padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.parents-summary p { display: flex; align-items: center; gap: 5px; margin: 0 0 12px; color: var(--muted); font: 400 13px/1.6 'Noto Serif KR', serif; }
+.parents-summary em { margin-left: auto; font-style: normal; }
+.parents-summary strong { font: 400 18px 'Noto Serif KR', serif; }
+.contact-open { width: 100%; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--ink); border-radius: 8px; padding: 15px 17px; background: var(--ink); color: var(--paper); font: 500 14px Pretendard, Arial, sans-serif; cursor: pointer; }
+.contact-open span { font-size: 22px; font-weight: 400; }
+.contact-modal-backdrop { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 24px; background: rgba(30, 35, 39, .55); }
+.contact-modal { position: relative; width: min(100%, 440px); max-height: 88vh; overflow: auto; padding: 34px 18px 20px; border-radius: 8px; background: var(--paper); color: var(--ink); box-shadow: 0 18px 50px rgba(0,0,0,.2); text-align: center; }
+.modal-close { position: absolute; top: 8px; right: 12px; border: 0; background: transparent; color: var(--muted); font-size: 28px; cursor: pointer; }
+.contact-modal h2 { margin: 0; }
+.contact-modal > p { margin: 8px 0 22px; color: var(--muted); font-size: 12px; }
+.contact-tabs { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+.contact-tabs button { border: 0; border-bottom: 2px solid transparent; padding: 12px; background: transparent; color: var(--muted); font: 500 13px Pretendard, Arial, sans-serif; cursor: pointer; }
+.contact-tabs button.active { border-bottom-color: var(--ink); color: var(--ink); }
+.contact-list { display: grid; gap: 10px; margin-top: 18px; text-align: left; }
+.contact-list article { padding: 18px 16px; border-radius: 10px; background: var(--warm); }
+.contact-list article > div:first-child { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.contact-list strong { font-size: 14px; font-weight: 500; }
+.contact-list article span { color: var(--muted); font-size: 12px; }
+.contact-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 15px; }
+.contact-actions a { padding: 11px 8px; border-radius: 6px; background: var(--paper); color: var(--ink); text-align: center; text-decoration: none; font-size: 12px; }
+.contact-actions a:last-child { background: var(--ink); color: var(--paper); }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }

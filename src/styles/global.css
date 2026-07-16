@@ -4,7 +4,7 @@
 body { margin: 0; background: #e9e3db; color: var(--ink); font-family: Pretendard, Arial, sans-serif; }
 .invitation { width: min(100%, 480px); margin: 0 auto; background: var(--paper); min-height: 100vh; overflow: hidden; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.is-visible { opacity: 1; transform: none; }
 .hero { height: min(120vw, 550px); min-height: 390px; display: grid; place-items: end center; padding: 42px 24px; text-align: center; color: #fff; background-size: cover; background-position: var(--hero-position, center); }
 .hero, .gallery img, .lightbox img { image-rendering: auto; -webkit-backface-visibility: hidden; }
 .hero span, .section-heading span { font-size: 10px; letter-spacing: .2em; }

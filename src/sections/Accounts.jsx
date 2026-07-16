@@ -3,7 +3,7 @@ import { copyText } from '../utils/clipboard'
 
 export default function Accounts({ title, groups }) {
   const [copied, setCopied] = useState('')
-  const [open, setOpen] = useState(0)
+  const [open, setOpen] = useState(-1)
   const copy = async (label, value) => {
     try {
       await copyText(value)

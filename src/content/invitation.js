@@ -49,7 +49,7 @@ export const invitation = {
     kakaoMapUrl:
       "https://map.kakao.com/link/search/%EC%84%B8%EB%B9%9B%EC%84%AC%20%ED%94%8C%EB%A1%9C%ED%8C%85%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C",
     naverMapUrl:
-      "https://map.naver.com/p/search/%EC%84%B8%EB%B9%9B%EC%84%AC%20%ED%94%8C%EB%A1%9C%ED%8C%85%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C",
+      "https://map.naver.com/p/entry/place/34698773?c=15.00,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607170000%26locale%3Dko%26svcName%3Dmap_pcv5",
     googleMapUrl:
       "https://www.google.com/maps/search/?api=1&query=%EC%84%B8%EB%B9%9B%EC%84%AC%20%ED%94%8C%EB%A1%9C%ED%8C%85%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C",
   },

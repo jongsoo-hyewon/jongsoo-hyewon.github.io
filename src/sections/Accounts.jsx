@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import { copyText } from '../utils/clipboard'
 
 export default function Accounts({ title, groups }) {
   const [copied, setCopied] = useState('')
   const [open, setOpen] = useState(0)
   const copy = async (label, value) => {
     try {
-      await navigator.clipboard.writeText(value)
+      await copyText(value)
       setCopied(label)
       window.setTimeout(() => setCopied(''), 1800)
     } catch { setCopied('복사 실패') }

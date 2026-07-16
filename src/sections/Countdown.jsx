@@ -23,5 +23,8 @@ export default function Countdown({ eventDate }) {
     return () => window.clearInterval(timer)
   }, [eventDate])
 
-  return <section className="countdown section"><div className="section-heading"><span>SAVE THE DATE</span><h2>2026. 11</h2></div><div className="calendar" aria-label="2026년 11월 달력"><div className="weekdays">{week.map((name) => <span key={name}>{name}</span>)}</div><div className="days">{cells.map((date, i) => <span key={i} className={date === day ? 'wedding-day' : ''}>{date}</span>)}</div></div><p className="d-day"><b>D-{daysLeft}</b><span>금종수 · 강혜원 결혼식까지</span></p></section>
+  const monthLabel = `${year}. ${String(month + 1).padStart(2, '0')}`
+  const eventStarted = new Date() >= event
+
+  return <section className="countdown section"><div className="section-heading"><span>SAVE THE DATE</span><h2>{monthLabel}</h2></div><div className="calendar" aria-label={`${year}년 ${month + 1}월 달력`}><div className="weekdays">{week.map((name) => <span key={name}>{name}</span>)}</div><div className="days">{cells.map((date, i) => <span key={i} className={date === day ? 'wedding-day' : ''}>{date}</span>)}</div></div><p className="d-day"><b>{eventStarted ? '오늘입니다' : `D-${daysLeft}`}</b><span>{eventStarted ? '두 사람의 새로운 시작을 축하해 주세요' : '결혼식까지'}</span></p></section>
 }

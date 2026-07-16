@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&family=Pretendard:wght@400;500&display=swap');
 
 * { box-sizing: border-box; }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 body { margin: 0; background: #e9e3db; color: var(--ink); font-family: Pretendard, Arial, sans-serif; }
 .invitation { width: min(100%, 480px); margin: 0 auto; background: var(--paper); min-height: 100vh; overflow: hidden; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 .hero { height: min(120vw, 550px); min-height: 390px; display: grid; place-items: end center; padding: 42px 24px; text-align: center; color: #fff; background-size: cover; background-position: var(--hero-position, center); }
 .hero, .gallery img, .lightbox img { image-rendering: auto; -webkit-backface-visibility: hidden; }
-.hero span, .section-heading span { font-size: 10px; letter-spacing: .2em; }
+.hero span, .section-heading span { font-size: 11px; letter-spacing: .16em; }
 .hero h1 { margin: 10px 0 8px; font: 400 clamp(34px, 9vw, 44px)/1.15 'Noto Serif KR', serif; }
 .hero p { margin: 0; font-size: 12px; letter-spacing: .1em; }
 .section { padding: 62px 28px; text-align: center; }
@@ -40,7 +41,7 @@ h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
 .ceremony { border-block: 1px solid var(--line); }
 .ceremony h2 { font-size: 19px; }
 .map-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 28px; }
-.map-links a { flex: 1; display: inline-block; border: 1px solid var(--line); padding: 12px 10px; color: var(--ink); text-decoration: none; font-size: 13px; }
+.map-links a { flex: 1; display: inline-block; border: 1px solid var(--line); padding: 12px 10px; color: var(--ink); text-decoration: none; font-size: 14px; }
 .map-links .map-primary { grid-column: 1 / -1; background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .transport { padding-bottom: 52px; text-align: left; }
 .transport .section-heading { text-align: center; margin-bottom: 28px; }
@@ -48,7 +49,7 @@ h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
 .transport-item:last-of-type { border-bottom: 1px solid var(--line); }
 .transport-item h3 { margin: 0 0 12px; color: var(--muted); font: 500 14px Pretendard, Arial, sans-serif; }
 .transport-item h3 span { display: inline-block; width: 22px; color: var(--muted); font-size: 17px; }
-.transport-item p, .transport-note { margin: 9px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.transport-item p, .transport-note { margin: 9px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
 .transport-item p { white-space: pre-line; }
 .transport-shuttle { margin-top: 16px !important; padding-top: 14px; border-top: 1px solid var(--line); }
 .transport-shuttle b { color: var(--ink); font-weight: 500; }
@@ -76,6 +77,7 @@ footer { padding: 45px 20px; text-align: center; color: var(--accent); font: ita
 .music-player { position: fixed; right: max(18px, calc((100vw - 480px) / 2 + 18px)); bottom: 18px; z-index: 5; }
 .music-player button { border: 1px solid var(--line); border-radius: 999px; padding: 11px 15px; background: var(--paper); color: var(--ink); box-shadow: 0 3px 12px rgba(30, 43, 54, .14); font: 500 12px Pretendard, Arial, sans-serif; cursor: pointer; }
 .music-player span { margin-right: 7px; font-size: 10px; }
+.music-error { position: absolute; right: 0; bottom: calc(100% + 8px); width: max-content; margin: 0; padding: 7px 9px; border-radius: 6px; background: var(--ink); color: var(--paper); font-size: 12px; }
 .share { border-top: 1px solid var(--line); }
 .share > button { margin-top: 25px; border: 1px solid var(--ink); padding: 13px 28px; background: var(--ink); color: var(--paper); font: 500 13px Pretendard, Arial, sans-serif; cursor: pointer; }
 .share > p { margin: 13px 0 0; color: var(--muted); font-size: 12px; }

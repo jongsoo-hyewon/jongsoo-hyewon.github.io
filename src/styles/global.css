@@ -51,6 +51,8 @@ h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
 .accounts { background: var(--warm); }
 .accounts p { margin: 17px 0 0; font-size: 13px; color: var(--muted); }
 .accounts b { color: var(--ink); font-weight: 500; margin-right: 10px; }
+.accounts p button { border: 0; padding: 0; background: transparent; color: var(--muted); font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.copy-status { margin-top: 18px; color: var(--accent); font-size: 12px; }
 footer { padding: 45px 20px; text-align: center; color: var(--accent); font: italic 18px/1.5 'Noto Serif KR', serif; }
 .music-player { position: fixed; right: max(18px, calc((100vw - 480px) / 2 + 18px)); bottom: 18px; z-index: 5; }
 .music-player button { border: 1px solid var(--line); border-radius: 999px; padding: 11px 15px; background: var(--paper); color: var(--ink); box-shadow: 0 3px 12px rgba(30, 43, 54, .14); font: 500 12px Pretendard, Arial, sans-serif; cursor: pointer; }

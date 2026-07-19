@@ -6,7 +6,10 @@ export default function Gallery({ title, images, imagePosition = 'center', image
   const [showAll, setShowAll] = useState(false)
   const selectedButton = useRef(null)
   const closeButton = useRef(null)
+  const touchStartX = useRef(null)
   const close = () => setSelected(null)
+  const showPrevious = () => setSelected((current) => Math.max(0, current - 1))
+  const showNext = () => setSelected((current) => Math.min(availableImages.length - 1, current + 1))
   const visibleImages = showAll ? availableImages : availableImages.slice(0, 3)
 
   useEffect(() => {
@@ -16,8 +19,8 @@ export default function Gallery({ title, images, imagePosition = 'center', image
     closeButton.current?.focus()
     const onKeyDown = (event) => {
       if (event.key === 'Escape') close()
-      if (event.key === 'ArrowLeft') setSelected((current) => Math.max(0, current - 1))
-      if (event.key === 'ArrowRight') setSelected((current) => Math.min(availableImages.length - 1, current + 1))
+      if (event.key === 'ArrowLeft') showPrevious()
+      if (event.key === 'ArrowRight') showNext()
     }
     window.addEventListener('keydown', onKeyDown)
     return () => { window.removeEventListener('keydown', onKeyDown); document.body.style.overflow = previousOverflow; selectedButton.current?.focus() }
@@ -32,6 +35,14 @@ export default function Gallery({ title, images, imagePosition = 'center', image
       return <button type="button" key={image} onClick={(event) => { selectedButton.current = event.currentTarget; setSelected(imageIndex) }}><img src={image} alt={`웨딩 사진 ${imageIndex + 1}`} loading="lazy" onError={() => removeBroken(image)} style={{ objectPosition: imagePosition, objectFit: imageFit }} /></button>
     })}</div>
     {!showAll && availableImages.length > 3 && <button className="gallery-more" type="button" onClick={() => setShowAll(true)}>더보기</button>}
-    {selected !== null && availableImages[selected] && <div className="lightbox" role="dialog" aria-modal="true" aria-label={`웨딩 사진 ${selected + 1}`} onClick={close}><button ref={closeButton} className="lightbox-close" type="button" onClick={close} aria-label="사진 닫기">×</button><img src={availableImages[selected]} alt={`웨딩 사진 ${selected + 1}`} onClick={(event) => event.stopPropagation()} style={{ objectFit: imageFit }} /></div>}
+    {selected !== null && availableImages[selected] && <div className="lightbox" role="dialog" aria-modal="true" aria-label={`웨딩 사진 ${selected + 1}`} onClick={close}>
+      <button ref={closeButton} className="lightbox-close" type="button" onClick={close} aria-label="사진 닫기">×</button>
+      <button className="lightbox-nav lightbox-prev" type="button" onClick={(event) => { event.stopPropagation(); showPrevious() }} disabled={selected === 0} aria-label="이전 사진">‹</button>
+      <div className="lightbox-stage" onClick={(event) => event.stopPropagation()} onTouchStart={(event) => { touchStartX.current = event.touches[0].clientX }} onTouchEnd={(event) => { const distance = event.changedTouches[0].clientX - touchStartX.current; if (distance > 45) showPrevious(); if (distance < -45) showNext(); touchStartX.current = null }}>
+        <img key={availableImages[selected]} src={availableImages[selected]} alt={`웨딩 사진 ${selected + 1}`} style={{ objectFit: imageFit }} />
+        <span className="lightbox-count">{selected + 1} / {availableImages.length}</span>
+      </div>
+      <button className="lightbox-nav lightbox-next" type="button" onClick={(event) => { event.stopPropagation(); showNext() }} disabled={selected === availableImages.length - 1} aria-label="다음 사진">›</button>
+    </div>}
   </section>
 }

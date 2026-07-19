@@ -140,14 +140,14 @@ export const invitation = {
   },
   contacts: {
     groom: [
-      { name: "신랑 금종수", relation: "신랑", phone: "010-0000-0000" },
-      { name: "신랑 아버지", relation: "신랑 아버지", phone: "010-0000-0000" },
-      { name: "신랑 어머니", relation: "신랑 어머니", phone: "010-0000-0000" },
+      { name: "신랑 금종수", relation: "신랑", phone: "010-9314-0705" },
+      { name: "금상룡", relation: "신랑 아버지", phone: "010-5500-0745" },
+      { name: "신찬수", relation: "신랑 어머니", phone: "010-8314-0014" },
     ],
     bride: [
-      { name: "신부 강혜원", relation: "신부", phone: "010-0000-0000" },
-      { name: "신부 아버지", relation: "신부 아버지", phone: "010-0000-0000" },
-      { name: "신부 어머니", relation: "신부 어머니", phone: "010-0000-0000" },
+      { name: "신부 강혜원", relation: "신부", phone: "010-3269-0240" },
+      { name: "강호관", relation: "신부 아버지", phone: "010-2491-0240" },
+      { name: "이상미", relation: "신부 어머니", phone: "010-2469-0240" },
     ],
   },
   footer: { text: "함께해 주셔서 감사합니다." },

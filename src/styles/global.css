@@ -34,10 +34,8 @@ h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
 .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
 .gallery button { border: 0; padding: 0; background: transparent; cursor: zoom-in; }
 .gallery img { width: 100%; aspect-ratio: 1 / 1.22; object-fit: cover; display: block; }
-.gallery button:first-child { grid-column: 1 / -1; }
-.gallery button:first-child img { aspect-ratio: 1 / .78; }
-.gallery button:nth-child(6), .gallery button:nth-child(11) { grid-column: 1 / -1; }
-.gallery button:nth-child(6) img, .gallery button:nth-child(11) img { aspect-ratio: 1 / .78; }
+.gallery button:nth-child(3n + 1) { grid-column: 1 / -1; }
+.gallery button:nth-child(3n + 1) img { aspect-ratio: 1 / .78; }
 .gallery button:nth-child(11) img { object-position: 25% 28% !important; }
 .gallery-more { display: block; width: 100%; margin: 18px auto 0; border: 1px solid var(--line); padding: 13px; background: transparent; color: var(--ink); font: 500 13px Pretendard, Arial, sans-serif; cursor: pointer; }
 .countdown { border-top: 1px solid var(--line); }

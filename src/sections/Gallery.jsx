@@ -13,6 +13,13 @@ export default function Gallery({ title, images, imagePosition = 'center', image
   const visibleImages = showAll ? availableImages : availableImages.slice(0, 3)
 
   useEffect(() => {
+    availableImages.forEach((image) => {
+      const preload = new Image()
+      preload.src = image
+    })
+  }, [availableImages])
+
+  useEffect(() => {
     if (selected === null) return undefined
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -39,7 +46,6 @@ export default function Gallery({ title, images, imagePosition = 'center', image
       <button ref={closeButton} className="lightbox-close" type="button" onClick={close} aria-label="사진 닫기">×</button>
       <div className="lightbox-stage" onClick={(event) => event.stopPropagation()} onTouchStart={(event) => { touchStartX.current = event.touches[0].clientX }} onTouchEnd={(event) => { const distance = event.changedTouches[0].clientX - touchStartX.current; if (distance > 45) showPrevious(); if (distance < -45) showNext(); touchStartX.current = null }}>
         <img key={availableImages[selected]} src={availableImages[selected]} alt={`웨딩 사진 ${selected + 1}`} style={{ objectFit: imageFit }} />
-        <span className="lightbox-count">{selected + 1} / {availableImages.length}</span>
       </div>
     </div>}
   </section>

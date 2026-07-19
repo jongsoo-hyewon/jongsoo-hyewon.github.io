@@ -52,7 +52,6 @@ h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
 .lightbox-stage { position: relative; display: grid; max-width: 100%; max-height: 88vh; }
 .lightbox img { display: block; width: auto; height: auto; max-width: 100%; max-height: 88vh; margin: 0 auto; object-fit: contain; cursor: default; animation: lightbox-image-in .22s ease-out; }
 .lightbox-close { position: absolute; top: 16px; right: 20px; border: 0; padding: 4px 10px; background: transparent; color: #fff; font-size: 36px; cursor: pointer; }
-.lightbox-count { position: absolute; bottom: 12px; left: 50%; padding: 5px 10px; border-radius: 999px; background: rgba(0, 0, 0, .42); color: #fff; font-size: 11px; letter-spacing: .08em; transform: translateX(-50%); }
 @keyframes lightbox-image-in { from { opacity: .35; transform: translateX(10px); } to { opacity: 1; transform: none; } }
 .ceremony { border-block: 1px solid var(--line); }
 .ceremony h2 { font-size: 19px; }

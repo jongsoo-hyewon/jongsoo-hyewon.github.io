@@ -1,12 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&family=Pretendard:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Great+Vibes&family=Noto+Serif+KR:wght@400;500&family=Pretendard:wght@400;500&display=swap');
 
 * { box-sizing: border-box; }
 button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 body { margin: 0; background: #e9e3db; color: var(--ink); font-family: Pretendard, Arial, sans-serif; }
 .invitation { width: min(100%, 480px); margin: 0 auto; background: var(--paper); min-height: 100vh; overflow: hidden; }
+.opening { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; overflow: hidden; background: #faf8f4; color: #39322c; transition: opacity .55s ease, visibility .55s ease; }
+.opening.is-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+.opening::before, .opening::after { content: ''; position: absolute; width: min(74vw, 360px); height: min(74vw, 360px); border: 1px solid rgba(121, 93, 68, .13); border-radius: 50%; pointer-events: none; }
+.opening::before { top: -26vw; left: -26vw; }
+.opening::after { right: -32vw; bottom: -32vw; }
+.opening-card { position: relative; display: grid; justify-items: center; width: min(100%, 390px); padding: 16px; }
+.opening-kicker { margin-bottom: 26px; color: #957b63; font-size: 9px; letter-spacing: .25em; }
+.opening-title { position: relative; width: 100%; margin: 0; overflow: hidden; font: 400 clamp(27px, 7.5vw, 38px)/1.25 'Great Vibes', cursive; letter-spacing: .01em; white-space: nowrap; text-align: center; clip-path: inset(0 100% 0 0); animation: glass-wipe 1.65s cubic-bezier(.2, .7, .2, 1) .3s forwards; }
+.opening-title::after { content: ''; position: absolute; inset: -35% auto -35% -28%; width: 25%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent); filter: blur(5px); transform: skewX(-18deg); animation: glass-shine 1.65s ease .3s forwards; }
+@keyframes glass-wipe { to { clip-path: inset(0 0 0 0); } }
+@keyframes glass-shine { to { left: 110%; } }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
-.hero { height: min(120vw, 550px); min-height: 390px; display: grid; place-items: end center; padding: 42px 24px; text-align: center; color: #fff; background-size: cover; background-position: var(--hero-position, center); }
+.hero { height: min(120vw, 550px); min-height: 390px; display: grid; place-items: start center; padding: 42px 24px; text-align: center; color: #fff; background-size: cover; background-position: var(--hero-position, center); }
 .hero, .gallery img, .lightbox img { image-rendering: auto; -webkit-backface-visibility: hidden; }
 .hero span, .section-heading span { font-size: 11px; letter-spacing: .16em; }
 .hero h1 { margin: 10px 0 8px; font: 400 clamp(34px, 9vw, 44px)/1.15 'Noto Serif KR', serif; }
@@ -25,6 +36,10 @@ h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
 .gallery img { width: 100%; aspect-ratio: 1 / 1.22; object-fit: cover; display: block; }
 .gallery button:first-child { grid-column: 1 / -1; }
 .gallery button:first-child img { aspect-ratio: 1 / .78; }
+.gallery button:nth-child(6), .gallery button:nth-child(11) { grid-column: 1 / -1; }
+.gallery button:nth-child(6) img, .gallery button:nth-child(11) img { aspect-ratio: 1 / .78; }
+.gallery button:nth-child(11) img { object-position: 25% 28% !important; }
+.gallery-more { display: block; width: 100%; margin: 18px auto 0; border: 1px solid var(--line); padding: 13px; background: transparent; color: var(--ink); font: 500 13px Pretendard, Arial, sans-serif; cursor: pointer; }
 .countdown { border-top: 1px solid var(--line); }
 .calendar { margin-top: 28px; font-size: 13px; }
 .weekdays, .days { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; }
@@ -105,4 +120,4 @@ footer { padding: 45px 20px; text-align: center; color: var(--accent); font: ita
 .contact-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 15px; }
 .contact-actions a { padding: 11px 8px; border-radius: 6px; background: var(--paper); color: var(--ink); text-align: center; text-decoration: none; font-size: 12px; }
 .contact-actions a:last-child { background: var(--ink); color: var(--paper); }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+@media (prefers-reduced-motion: reduce) { .opening { display: none; } .reveal { opacity: 1; transform: none; transition: none; } }

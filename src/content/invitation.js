@@ -24,7 +24,7 @@ export const invitation = {
     overlay: 0.6,
   },
   message: {
-    title: "We are getting married",
+    title: "We're getting married",
     body: "서로의 가장 평범한 날들을\n가장 특별하게 만들어 갈 두 사람이\n새로운 시작을 함께합니다.",
   },
   gallery: {
@@ -54,6 +54,9 @@ export const invitation = {
       "/images/gallery-20.JPG",
       "/images/gallery-21.JPG",
       "/images/gallery-22.JPG",
+      "/images/gallery-23.JPG",
+      "/images/gallery-24.JPG",
+      "/images/gallery-25.JPG",
     ],
   },
   countdown: { eventDate: "2026-11-15T15:00:00+09:00" },

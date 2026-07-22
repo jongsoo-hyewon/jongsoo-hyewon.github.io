@@ -5,7 +5,7 @@ const week = ['일', '월', '화', '수', '목', '금', '토']
 function getDaysLeft(eventDate) {
   const today = new Date()
   const event = new Date(eventDate)
-  return Math.max(0, Math.ceil(( - today) / 86_400_000))
+  return Math.max(0, Math.ceil((event - today) / 86_400_000))
 }
 
 export default function Countdown({ eventDate }) {

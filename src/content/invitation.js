@@ -118,6 +118,7 @@ export const invitation = {
     ],
   },
   rsvp: {
+    showIntroOnLoad: false,
     title: "참석 여부 전달",
     body: "소중한 자리에 함께해 주실 수 있는지\n미리 알려주시면 감사하겠습니다.",
   },

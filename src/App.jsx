@@ -36,7 +36,7 @@ function Opening() {
 }
 
 export default function App() {
-  const [attendanceOpen, setAttendanceOpen] = useState(true)
+  const [attendanceOpen, setAttendanceOpen] = useState(Boolean(invitation.rsvp.showIntroOnLoad))
   const [attendanceStartAt, setAttendanceStartAt] = useState('intro')
 
   const openAttendanceForm = () => {

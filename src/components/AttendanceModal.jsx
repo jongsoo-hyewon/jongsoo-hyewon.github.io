@@ -17,8 +17,9 @@ export default function AttendanceModal({ names, date, venue, theme, open, start
   const [attendance, setAttendance] = useState('attending')
 
   useEffect(() => {
+    if (startAt !== 'intro') return
     if (localStorage.getItem('attendance-modal-hidden') === new Date().toDateString()) onClose()
-  }, [onClose])
+  }, [onClose, startAt])
 
   useEffect(() => {
     if (!open) return

@@ -83,8 +83,8 @@ export const invitation = {
           {
             label: "신랑",
             name: "금종수",
-            bank: "은행명",
-            value: "000-0000-0000-00",
+            bank: "우리은행",
+            value: "1002-143-560052",
           },
           {
             label: "신랑 아버지",
@@ -106,8 +106,8 @@ export const invitation = {
           {
             label: "신부",
             name: "강혜원",
-            bank: "은행명",
-            value: "000-0000-0000-00",
+            bank: "우리은행",
+            value: "1002-248-171669",
           },
           {
             label: "신부 아버지",
@@ -126,8 +126,8 @@ export const invitation = {
     ],
     title: "마음 전하실 곳",
     items: [
-      { label: "신랑 금종수", bank: "은행명", value: "000-0000-0000-00" },
-      { label: "신부 강혜원", bank: "은행명", value: "000-0000-0000-00" },
+      { label: "신랑 금종수", bank: "우리은행", value: "1002-143-560052" },
+      { label: "신부 강혜원", bank: "우리은행", value: "1002-248-171669" },
     ],
   },
   contacts: {

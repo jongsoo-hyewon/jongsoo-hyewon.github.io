@@ -1,5 +1,9 @@
 // 콘텐츠와 노출 순서는 이 파일에서만 관리합니다.
 // 섹션을 숨기려면 sectionOrder에서 이름을 지우면 됩니다.
+const galleryImageVersion = "20260722"
+const galleryImage = (number) =>
+  `/images/gallery-${String(number).padStart(2, "0")}.jpg?v=${galleryImageVersion}`
+
 export const sectionOrder = [
   "hero",
   "message",
@@ -31,26 +35,7 @@ export const invitation = {
     title: "우리의 순간",
     imagePosition: "center",
     imageFit: "cover",
-    images: [
-      "/images/gallery-01.jpg",
-      "/images/gallery-02.jpg",
-      "/images/gallery-03.jpg",
-      "/images/gallery-04.jpg",
-      "/images/gallery-05.jpg",
-      "/images/gallery-06.jpg",
-      "/images/gallery-07.jpg",
-      "/images/gallery-08.jpg",
-      "/images/gallery-09.jpg",
-      "/images/gallery-10.jpg",
-      "/images/gallery-11.jpg",
-      "/images/gallery-12.jpg",
-      "/images/gallery-13.jpg",
-      "/images/gallery-14.jpg",
-      "/images/gallery-15.jpg",
-      "/images/gallery-16.jpg",
-      "/images/gallery-17.jpg",
-      "/images/gallery-18.jpg",
-    ],
+    images: Array.from({ length: 18 }, (_, index) => galleryImage(index + 1)),
   },
   countdown: { eventDate: "2026-11-15T15:00:00+09:00" },
   ceremony: {

@@ -42,5 +42,7 @@ export default function Share({ names }) {
     await shareNative()
   }
 
-  return <section className="share section"><div className="section-heading"><span>SHARE</span><h2>소중한 분께 전해 주세요</h2></div><div className="share-actions"><button type="button" onClick={share}>카카오톡으로 전하기</button><button type="button" onClick={copyLink}>링크 복사하기</button></div>{message && <p className="share-toast" role="status">{message}</p>}</section>
+  const copied = message === '링크를 복사했습니다.'
+
+  return <section className="share section"><div className="section-heading"><span>SHARE</span><h2>소중한 분께 전해 주세요</h2></div><div className="share-actions"><button type="button" onClick={share}>카카오톡으로 전하기</button><button type="button" onClick={copyLink}>링크 복사하기</button></div>{message && <p className={`share-toast ${copied ? 'is-copy-success' : ''}`} role="status">{message}</p>}</section>
 }

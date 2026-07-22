@@ -49,6 +49,7 @@ export const invitation = {
       "/images/gallery-15.jpg",
       "/images/gallery-16.jpg",
       "/images/gallery-17.jpg",
+      "/images/gallery-18.jpg",
     ],
   },
   countdown: { eventDate: "2026-11-15T15:00:00+09:00" },

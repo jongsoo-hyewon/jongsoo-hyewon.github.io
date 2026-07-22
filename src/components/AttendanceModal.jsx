@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { supabase } from '../lib/supabase'
 
 function ChoiceButton({ active, children, onClick }) {
@@ -15,6 +15,12 @@ export default function AttendanceModal({ names, date, venue, theme, open, start
   const [submitError, setSubmitError] = useState('')
   const [side, setSide] = useState('groom')
   const [attendance, setAttendance] = useState('attending')
+  const historyActive = useRef(false)
+  const onCloseRef = useRef(onClose)
+
+  useEffect(() => {
+    onCloseRef.current = onClose
+  }, [onClose])
 
   useEffect(() => {
     if (startAt !== 'intro') return
@@ -37,8 +43,25 @@ export default function AttendanceModal({ names, date, venue, theme, open, start
     return () => { document.body.style.overflow = previousOverflow }
   }, [open])
 
+  useEffect(() => {
+    if (!open) return undefined
+    window.history.pushState({ attendanceModal: true }, '')
+    historyActive.current = true
+    const onPopState = () => {
+      if (!historyActive.current) return
+      historyActive.current = false
+      onCloseRef.current()
+    }
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [open])
+
   const close = () => {
     if (hideToday) localStorage.setItem('attendance-modal-hidden', new Date().toDateString())
+    if (historyActive.current) {
+      historyActive.current = false
+      window.history.back()
+    }
     onClose()
   }
 

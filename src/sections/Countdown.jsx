@@ -5,7 +5,7 @@ const week = ['일', '월', '화', '수', '목', '금', '토']
 function getDaysLeft(eventDate) {
   const today = new Date()
   const event = new Date(eventDate)
-  return Math.max(0, Math.ceil((event - today) / 86_400_000))
+  return Math.max(0, Math.ceil(( - today) / 86_400_000))
 }
 
 export default function Countdown({ eventDate }) {
@@ -26,5 +26,5 @@ export default function Countdown({ eventDate }) {
   const monthLabel = `${year}. ${String(month + 1).padStart(2, '0')}`
   const eventStarted = new Date() >= event
 
-  return <section className="countdown section"><div className="section-heading"><span>SAVE THE DATE</span><h2>{monthLabel}</h2></div><div className="calendar" aria-label={`${year}년 ${month + 1}월 달력`}><div className="weekdays">{week.map((name) => <span key={name}>{name}</span>)}</div><div className="days">{cells.map((date, i) => <span key={i} className={date === day ? 'wedding-day' : ''}>{date}</span>)}</div></div><p className="d-day"><b>{eventStarted ? '오늘입니다' : `D-${daysLeft}`}</b><span>{eventStarted ? '두 사람의 새로운 시작을 축하해 주세요' : '결혼식까지'}</span></p></section>
+  return <section className="countdown section"><div className="section-heading"><span>SAVE THE DATE</span><h2>{monthLabel}</h2></div><div className="calendar" aria-label={`${year}년 ${month + 1}월 달력`}><div className="weekdays">{week.map((name) => <span key={name}>{name}</span>)}</div><div className="days">{cells.map((date, i) => <span key={i} className={date === day ? 'wedding-day' : ''}>{date}</span>)}</div></div><p className="d-day"><b>{eventStarted ? '오늘입니다' : `D-${daysLeft}`}</b><span>{eventStarted ? '두 사람의 새로운 시작을 축하해 주세요' : '혜원·종수 결혼식까지'}</span></p></section>
 }

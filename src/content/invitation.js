@@ -1,15 +1,15 @@
 // 콘텐츠와 노출 순서는 이 파일에서만 관리합니다.
 // 섹션을 숨기려면 sectionOrder에서 이름을 지우면 됩니다.
-const galleryImageVersion = "20260722"
+const galleryImageVersion = "20260722";
 const galleryImage = (number) =>
-  `/images/gallery-${String(number).padStart(2, "0")}.jpg?v=${galleryImageVersion}`
+  `/images/gallery-${String(number).padStart(2, "0")}.jpg?v=${galleryImageVersion}`;
 
 export const sectionOrder = [
   "hero",
   "message",
-  "gallery",
-  "countdown",
   "ceremony",
+  "countdown",
+  "gallery",
   "transport",
   "contacts",
   "accounts",
@@ -23,6 +23,7 @@ export const invitation = {
     eyebrow: "WEDDING INVITATION",
     names: "금종수 · 강혜원",
     date: "2026. 11. 15. SUN · 15:00",
+    venue: "세빛섬 플로팅아일랜드",
     image: "/images/hero.jpg",
     imagePosition: "center 38%",
     overlay: 0.6,
@@ -115,6 +116,10 @@ export const invitation = {
       { label: "신랑 금종수", bank: "우리은행", value: "1002-143-560052" },
       { label: "신부 강혜원", bank: "우리은행", value: "1002-248-171669" },
     ],
+  },
+  rsvp: {
+    title: "참석 여부 전달",
+    body: "소중한 자리에 함께해 주실 수 있는지\n미리 알려주시면 감사하겠습니다.",
   },
   contacts: {
     groom: [

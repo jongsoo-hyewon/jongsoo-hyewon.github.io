@@ -9,7 +9,7 @@ export default function Share({ names }) {
       try { await navigator.share(data) } catch (error) { if (error.name !== 'AbortError') setMessage('공유하지 못했습니다.') }
       return
     }
-    try { await copyText(window.location.href); setMessage('청첩장 링크를 복사했습니다.') } catch { setMessage('주소창의 링크를 복사해 주세요.') }
+    try { await copyText(window.location.href); setMessage('') } catch { setMessage('주소창의 링크를 복사해 주세요.') }
   }
 
   return <section className="share section"><div className="section-heading"><span>SHARE</span><h2>소중한 분께 전해 주세요</h2></div><button type="button" onClick={share}>청첩장 공유하기</button>{message && <p role="status">{message}</p>}</section>

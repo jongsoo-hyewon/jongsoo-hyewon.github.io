@@ -5,8 +5,8 @@ import MusicPlayer from './components/MusicPlayer'
 import Reveal from './components/Reveal'
 import Share from './components/Share'
 import Contacts from './components/Contacts'
-import AttendanceModal from './components/AttendanceModal'
-import Rsvp from './sections/Rsvp'
+// import AttendanceModal from './components/AttendanceModal'
+// import Rsvp from './sections/Rsvp'
 import Footer from './sections/Footer'
 import './styles/themes.css'
 
@@ -36,13 +36,13 @@ function Opening() {
 }
 
 export default function App() {
-  const [attendanceOpen, setAttendanceOpen] = useState(Boolean(invitation.rsvp.showIntroOnLoad))
-  const [attendanceStartAt, setAttendanceStartAt] = useState('intro')
-
-  const openAttendanceForm = () => {
-    setAttendanceStartAt('form')
-    setAttendanceOpen(true)
-  }
+  // RSVP를 다시 사용할 때 아래 상태와 핸들러의 주석을 해제합니다.
+  // const [attendanceOpen, setAttendanceOpen] = useState(Boolean(invitation.rsvp.showIntroOnLoad))
+  // const [attendanceStartAt, setAttendanceStartAt] = useState('intro')
+  // const openAttendanceForm = () => {
+  //   setAttendanceStartAt('form')
+  //   setAttendanceOpen(true)
+  // }
 
   return (
     <>
@@ -52,12 +52,13 @@ export default function App() {
           return Section ? <Reveal key={section}><Section {...invitation[section]} /></Reveal> : null
         })}
         <MusicPlayer {...invitation.music} />
-        <Reveal><Rsvp {...invitation.rsvp} onOpen={openAttendanceForm} /></Reveal>
+        {/* RSVP를 다시 사용할 때 주석을 해제합니다. */}
+        {/* <Reveal><Rsvp {...invitation.rsvp} onOpen={openAttendanceForm} /></Reveal> */}
         <Share names={invitation.hero.names} />
         <Reveal><Footer {...invitation.footer} /></Reveal>
       </main>
       <Opening />
-      <AttendanceModal names={invitation.hero.names} date={invitation.hero.date} venue={invitation.hero.venue} theme={invitation.theme} open={attendanceOpen} startAt={attendanceStartAt} onClose={() => setAttendanceOpen(false)} />
+      {/* <AttendanceModal names={invitation.hero.names} date={invitation.hero.date} venue={invitation.hero.venue} theme={invitation.theme} open={attendanceOpen} startAt={attendanceStartAt} onClose={() => setAttendanceOpen(false)} /> */}
     </>
   )
 }

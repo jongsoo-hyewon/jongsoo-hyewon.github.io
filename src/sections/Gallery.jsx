@@ -38,12 +38,29 @@ export default function Gallery({ title, images, imagePosition = 'center', image
     document.body.style.overflow = 'hidden'
     closeButton.current?.focus()
     const onKeyDown = (event) => {
+      const zoomKeys = ['+', '=', '-', '_', '0']
+      if ((event.ctrlKey || event.metaKey) && zoomKeys.includes(event.key)) {
+        event.preventDefault()
+        return
+      }
       if (event.key === 'Escape') close()
       if (event.key === 'ArrowLeft') showPrevious()
       if (event.key === 'ArrowRight') showNext()
     }
+    const onWheel = (event) => {
+      if (event.ctrlKey || event.metaKey) event.preventDefault()
+    }
+    const preventZoom = (event) => event.preventDefault()
     window.addEventListener('keydown', onKeyDown)
-    return () => { window.removeEventListener('keydown', onKeyDown); document.body.style.overflow = previousOverflow; selectedButton.current?.focus() }
+    window.addEventListener('wheel', onWheel, { passive: false })
+    window.addEventListener('gesturestart', preventZoom, { passive: false })
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      window.removeEventListener('wheel', onWheel)
+      window.removeEventListener('gesturestart', preventZoom)
+      document.body.style.overflow = previousOverflow
+      selectedButton.current?.focus()
+    }
   }, [selected, availableImages.length])
 
   useEffect(() => {

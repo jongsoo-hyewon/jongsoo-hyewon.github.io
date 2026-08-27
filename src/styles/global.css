@@ -62,9 +62,9 @@ body { margin: 0; background: #e9e3db; color: var(--ink); font-family: Pretendar
 .transport, .contacts, .accounts, .rsvp, .share, footer {
   background: var(--paper);
 }
-.message em { color: var(--accent); font: 400 23px/1.4 'Noto Serif KR', serif; }
+.message em { color: var(--accent); font: 400 30px/1.25 'Great Vibes', cursive; letter-spacing: .01em; }
 .message p, .ceremony p { margin: 20px auto 0; color: var(--muted); font-size: 14px; line-height: 2; }
-.message p { white-space: pre-line; }
+.message p { white-space: pre-line; word-break: keep-all; overflow-wrap: break-word; }
 .section-heading { text-align: center; }
 .section-heading span { color: var(--accent); }
 h2 { margin: 11px 0 0; font: 400 25px/1.45 'Noto Serif KR', serif; }
